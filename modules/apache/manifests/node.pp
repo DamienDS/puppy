@@ -1,12 +1,20 @@
 class apache::node (
-ensure	= ""
+$ensure			= "present",
 ){
-     anchor {"apache::begin":
-     }->
-     class {"apache::install":
-     }->
-     class {"apache::postinstall":
-     }->
-     anchor {"apache::end":
-     }
+	if ($ensure == "present")
+	{
+		 anchor {"apache::begin":
+		 }->
+		 class {"apache::install":
+		 }->
+		 class {"apache::postinstall":
+		 }->
+		 anchor {"apache::end":
+		 }
+	}
+	else
+	{
+		class {"apache::uninstall":
+		}
+	}
 }
