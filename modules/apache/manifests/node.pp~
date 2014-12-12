@@ -1,0 +1,10 @@
+class apache::node {
+     anchor {"apache::begin":
+     }->
+     class {"apache::install":
+     }->
+     class {"apache::postinstall":
+     }->
+     anchor {"apache::end":
+     }
+}
