@@ -1,7 +1,5 @@
 class apache::node (
 $ensure			= "present",
-$vhosts_ensure	= "absent",
-$vhosts			= undef
 ){
 	if ($ensure == "present")
 	{
